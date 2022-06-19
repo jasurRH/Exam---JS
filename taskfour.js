@@ -1,8 +1,16 @@
-function maxPrice(arr){
-  arr.sort(function (x, y) {
-      return y.price-x.price ;
-    });
-    return arr[0].name
+
+
+
+function maxPrice(array) {
+  let maxPriceSum = 0;
+  let maxPriceName = '';
+  for (let i = 0; i < array.length; i++) {
+    if (array[i].price > maxPriceSum) {
+      maxPriceSum = array[i].price;
+      maxPriceName = array[i].name;
+    }
+  }
+  return maxPriceName;
 }
 
 console.log(maxPrice([
